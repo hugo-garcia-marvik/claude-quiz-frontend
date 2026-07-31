@@ -38,8 +38,13 @@ export function Login({ onStart, onLeaderboard, loading, error }: LoginProps) {
           onChange={(e) => setName(e.target.value)}
           autoFocus
           disabled={loading}
+          aria-describedby={error ? "login-error" : undefined}
         />
-        {error && <p className="error">{error}</p>}
+        {error && (
+          <p id="login-error" className="error" role="alert">
+            {error}
+          </p>
+        )}
         <button type="submit" className="btn primary" disabled={loading || !name.trim()}>
           {loading ? "Entrando…" : "Comenzar quiz"}
         </button>

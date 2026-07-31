@@ -52,6 +52,7 @@ export function Leaderboard({
 
       {!loading && entries.length > 0 && (
         <div className="table-wrap">
+          <p className="muted tiebreaker-note">Empates: gana el intento más reciente</p>
           <table>
             <thead>
               <tr>
