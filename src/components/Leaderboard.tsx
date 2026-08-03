@@ -32,6 +32,7 @@ export function Leaderboard({
         <div>
           <p className="eyebrow">Ranking</p>
           <h1>Tabla de líderes</h1>
+          <p className="subtitle">Mejor puntaje de cada jugador</p>
         </div>
         <div className="actions inline">
           <button type="button" className="btn ghost" onClick={onRefresh} disabled={loading}>
@@ -47,7 +48,7 @@ export function Leaderboard({
       {error && <p className="error">{error}</p>}
 
       {!loading && !error && entries.length === 0 && (
-        <p className="empty">Aún no hay puntajes. ¡Sé el primero en completar el quiz!</p>
+        <p className="empty">Aún no hay puntajes. ¡Sé el primero en completar el quiz y registrar tu mejor puntaje!</p>
       )}
 
       {!loading && entries.length > 0 && (
