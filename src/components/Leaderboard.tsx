@@ -60,6 +60,7 @@ export function Leaderboard({
                 <th>Jugador</th>
                 <th>Puntaje</th>
                 <th>%</th>
+                <th>Estado</th>
                 <th>Fecha</th>
               </tr>
             </thead>
@@ -76,6 +77,11 @@ export function Leaderboard({
                     {e.score}/{e.total}
                   </td>
                   <td>{e.percentage}%</td>
+                  <td>
+                    <span className={`lb-badge ${e.passed ? "pass" : "fail"}`}>
+                      {e.passed ? "Aprobado" : "Reprobado"}
+                    </span>
+                  </td>
                   <td className="muted">{formatDate(e.created_at)}</td>
                 </tr>
               ))}
