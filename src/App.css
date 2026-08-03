@@ -601,6 +601,27 @@ th {
   padding: 1.5rem 0;
 }
 
+.lb-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.lb-badge.pass {
+  color: #bbf7d0;
+  background: rgba(74, 222, 128, 0.15);
+}
+
+.lb-badge.fail {
+  color: #fecaca;
+  background: rgba(248, 113, 113, 0.15);
+}
+
 .error {
   color: #fca5a5;
   background: rgba(248, 113, 113, 0.1);

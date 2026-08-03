@@ -38,6 +38,8 @@ export interface LeaderboardEntry {
   score: number;
   total: number;
   percentage: number;
+  passed: boolean;
+  pass_threshold?: number;
   created_at: string;
 }
 

@@ -32,6 +32,7 @@ export function Leaderboard({
         <div>
           <p className="eyebrow">Ranking</p>
           <h1>Tabla de líderes</h1>
+          <p className="subtitle">Mejor puntaje de cada jugador</p>
         </div>
         <div className="actions inline">
           <button type="button" className="btn ghost" onClick={onRefresh} disabled={loading}>
@@ -47,7 +48,7 @@ export function Leaderboard({
       {error && <p className="error">{error}</p>}
 
       {!loading && !error && entries.length === 0 && (
-        <p className="empty">Aún no hay puntajes. ¡Sé el primero en completar el quiz!</p>
+        <p className="empty">Aún no hay puntajes. ¡Sé el primero en completar el quiz y registrar tu mejor puntaje!</p>
       )}
 
       {!loading && entries.length > 0 && (
@@ -59,6 +60,7 @@ export function Leaderboard({
                 <th>Jugador</th>
                 <th>Puntaje</th>
                 <th>%</th>
+                <th>Estado</th>
                 <th>Fecha</th>
               </tr>
             </thead>
@@ -75,6 +77,11 @@ export function Leaderboard({
                     {e.score}/{e.total}
                   </td>
                   <td>{e.percentage}%</td>
+                  <td>
+                    <span className={`lb-badge ${e.passed ? "pass" : "fail"}`}>
+                      {e.passed ? "Aprobado" : "Reprobado"}
+                    </span>
+                  </td>
                   <td className="muted">{formatDate(e.created_at)}</td>
                 </tr>
               ))}
